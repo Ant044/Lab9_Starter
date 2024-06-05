@@ -87,6 +87,14 @@
     </section>
   </main>
 
+  <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+  <script>
+    window.TrackJS && TrackJS.install({ 
+      token: "8d484d035ca7499fb4db8046a78fb2f3"
+      // for more configuration options, see https://docs.trackjs.com
+    });
+  </script>
+
   <script>
     let form = document.querySelector('form');
     form.addEventListener('submit', e => {
@@ -185,8 +193,11 @@
     });
 
     window.onerror = function (message, url, line, col, error) {
-        alert(`${message}\nURL: ${url}\nLine: ${line}\n`);
+        //alert(`${message}\nURL: ${url}\nLine: ${line}\n`);
+        console.log(`${message}\nURL: ${url}\nLine: ${line}\n`);
     };
+
+    TrackJS.track('Testing TrackJS!');
 
 
   </script>
